@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap");
+
 body {
+  font-family: Inter;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,7 +14,9 @@ body {
   width: 100%;
   max-width: 1200px;
 }
-
+.row {
+  width: 100%;
+}
 p {
   font-size: 14px;
   word-break: break-word;
@@ -27,13 +32,13 @@ p {
   flex-wrap: wrap;
 }
 
-.user {
+/* .user {
   width: 50%;
-}
+} */
 
 .user-card {
   background-color: #fff;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 10px;
   transition: 0.3s;
   cursor: pointer;
@@ -41,7 +46,7 @@ p {
 }
 
 .user-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .user-card__container {
@@ -51,13 +56,13 @@ p {
 .post-card {
   background-color: #fff;
   margin: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 10px;
 }
 
 .post-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .post-card__container {
@@ -108,4 +113,136 @@ p {
 
 .post__search--label {
   padding-right: 8px;
+}
+
+/* new css */
+
+/* header */
+
+h1 {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+ul {
+  display: flex;
+  gap: 30px;
+}
+.header__img {
+  width: 100%; /* Set the desired width of the cropped image */
+  position: absolute;
+  top: 0;
+  z-index: -10;
+  height: 120px; /* Set the desired height of the cropped image */
+  object-fit: cover; /* Crop the image to cover the container */
+}
+.movie__image {
+  height: 300px;
+  width: 200px;
+  overflow: hidden;
+}
+
+/* form */
+
+.form__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-control {
+  padding: 20px;
+  width: 30%;
+  margin: 20px;
+  border-radius: 30px;
+}
+
+.submit--button {
+  padding: 10px;
+  width: 20%;
+}
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-evenly; */
+  /* gap: 100px; */
+  align-items: center;
+  /* justify-content: center; */
+  margin: 0 auto;
+}
+
+/* CSS */
+.fixed-text {
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide any overflowing content */
+  text-overflow: ellipsis; /* Show an ellipsis (...) when text overflows */
+}
+
+.user-card {
+  width: calc(100% / 5);
+  margin: 20px;
+}
+
+/*  
+
+SPINNER
+
+*/
+
+.fa-spinner {
+  animation: rotate 700ms infinite linear;
+}
+
+.movies__loading--spinner {
+  display: none !important;
+}
+
+/* .movies__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 48px 0;
+} */
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+
+.movies__loading {
+  display: block !important;
+  margin: 0 auto;
+
+  font-size: 60px;
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
 }

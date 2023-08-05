@@ -18,7 +18,7 @@ async function onSearchChange(event) {
 }
 async function main() {
     const id = localStorage.getItem("id")
-    const posts = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=18b5ee41&s=fast`)
+    const posts = await fetch(`http://www.omdbapi.com/apikey=18b5ee41&s=fast`)
     const postsData = await posts.json()
     console.log(postsData)
 

@@ -1,9 +1,12 @@
 // API 1: "https://jsonplaceholder.typicode.com/users"
 // API 2: "https://jsonplaceholder.typicode.com/posts?userId=:id"
 
-const postListEl = document.querySelector(".post-list");
-let loginForm = document.getElementById("loginForm");
+// const postListEl = document.querySelector(".post-list");
+// let loginForm = document.getElementById("loginForm");
 let movie;
+userListEl = document.querySelector(".user-list");
+const searchResults = document.querySelector(".search__results");
+const loading = document.querySelector(".movies__loading--spinner");
 
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -11,7 +14,7 @@ loginForm.addEventListener("submit", (e) => {
   let username = document.getElementById("username");
 
   if (username.value == "") {
-    alert("Ensure you input a value in both fields!");
+    alert("Please enter a movie");
   } else {
     // perform operation with form input
     // alert("This form has been successfully submitted!")
@@ -27,20 +30,30 @@ loginForm.addEventListener("submit", (e) => {
   }
 });
 
-userListEl = document.querySelector(".user-list");
-
 async function main() {
+  loading.classList += " movies__loading";
   const movies = await fetch(
-    `http://www.omdbapi.com/&apikey=18b5ee41&s=${movie}`
+    `http://www.omdbapi.com/?apikey=18b5ee41&s=${movie}`
   );
   const moviesData = await movies.json();
   console.log(moviesData.Search);
+  searchResults.innerHTML = "Search results For: " + `${movie}`;
   userListEl.innerHTML = moviesData.Search.map((movie) => {
     // const users1 = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=18b5ee41&s=${movie}`);
-    userHTML(movie);
+    return userHTML(movie);
   }).join("");
+  loading.remove("movies__loading");
 }
 
+function userHTML(movie) {
+  return `<div class="user-card" onclick = "showUsersPosts(${movie.id})">
+  <div class="user-card__container">
+  <h3 class = "fixed-text">${movie.Title}</h3>
+   <img src = "${movie.Poster}" class = "movie__image">
+    <p><b>Year:</b> ${movie.Year}</p>
+  </div>
+</div>`;
+}
 // async function showUsersPosts(id) {
 //   localStorage.setItem("id", id);
 //   const id1 = localStorage.getItem("id")
@@ -55,13 +68,4 @@ async function main() {
 //   console.log(id1);
 // }
 
-function userHTML(movie) {
-  return `<div class="user-card" onclick = "showUsersPosts(${movie.id})">
-  <div class="user-card__container">
-  <h3>${movie.Title}</h4>
-   <img src = "${movie.Poster}">
-    <p><b>Year:</b> ${movie.Year}</p>
-  </div>
-</div>`;
-}
-main();
+// main();
