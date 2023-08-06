@@ -30,7 +30,12 @@ loginForm.addEventListener("submit", (e) => {
   }
 });
 
-async function main() {
+function filterMovies(event) {
+  main(event.target.value);
+  // console.log("HI")
+}
+
+async function main(filter) {
   loading.classList += " movies__loading";
   const movies = await fetch(
     `http://www.omdbapi.com/?apikey=18b5ee41&s=${movie}`
@@ -43,6 +48,22 @@ async function main() {
     return userHTML(movie);
   }).join("");
   loading.remove("movies__loading");
+
+  if (filter === "OLD_TO_NEW") {
+    console.log("HI");
+    moviesData.Search.sort((a, b) => a.Year - b.Year);
+    userListEl.innerHTML = moviesData.Search.map((movie) => {
+      // const users1 = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=18b5ee41&s=${movie}`);
+      return userHTML(movie);
+    }).join("");
+  } else if (filter === "NEW_TO_OLD") {
+    moviesData.Search.sort((a, b) => b.Year - a.Year);
+    userListEl.innerHTML = moviesData.Search.map((movie) => {
+      // const users1 = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=18b5ee41&s=${movie}`);
+      return userHTML(movie);
+    }).join("");
+  }
+  // movies.search(event)
 }
 
 function userHTML(movie) {

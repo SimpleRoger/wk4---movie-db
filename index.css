@@ -171,6 +171,16 @@ ul {
   border-radius: 30px;
 }
 
+.form__top--wrapper {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+.form--select {
+  /* width: 10px */
+  height: 30px;
+}
 .submit--button {
   padding: 10px;
   width: 20%;
