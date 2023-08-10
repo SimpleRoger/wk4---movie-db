@@ -22,6 +22,11 @@ p {
   word-break: break-word;
 }
 
+li {
+  color: white;
+
+}
+
 .hidden {
   display: none;
 }
@@ -130,7 +135,12 @@ h1 {
   align-items: center;
   height: 120px;
 }
-
+.btn__menu {
+  display: none;
+}
+.menu__backdrop {
+  display: none;
+}
 ul {
   cursor: pointer;
 }
@@ -263,4 +273,40 @@ SPINNER
   h1 {
     font-size: 30px;
   }
+  li {
+    font-weight: 700;
+  }
  }
+
+ /* small phones */
+
+ @media (max-width: 480px) {
+
+  .nav__links {
+    display: none;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+
+  .btn__menu {
+    display: block;
+    /* padding: 10px; */
+    font-size: 20px;
+    border-radius: 2px;
+    font-weight: bolder;
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-right: 10px;
+  }
+
+
+  .menu__open {
+    display: block;
+  }
+ }
+

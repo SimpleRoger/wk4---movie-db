@@ -3,6 +3,17 @@
 
 // const postListEl = document.querySelector(".post-list");
 // let loginForm = document.getElementById("loginForm");
+
+function openMenu() {
+  console.log("HI")
+  const backdrop = document.querySelector(".menu__backdrop");
+  backdrop.classList += " menu__open";
+}
+
+function openMenu() {
+  const backdrop = document.querySelector(".menu__backdrop");
+  backdrop.classList.remove("menu__open");
+}
 let movie;
 userListEl = document.querySelector(".user-list");
 const searchResults = document.querySelector(".search__results");

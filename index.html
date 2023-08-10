@@ -9,7 +9,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -25,11 +25,72 @@
     <div class="container">
       <div class="nav__wrapper">
         <h1>Roger's Movie Collection</h1>
-        <ul>
-          <li>Home</li>
-          <li>Browse</li>
-          <li>Contact</li>
-        </ul>
+        <div class="nav__links">
+          <ul>
+            <li>Home</li>
+            <li>Browse</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <button onclick="openMenu()" class="btn__menu">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="menu__backdrop">
+          <button onclick="closeMenu()" class="btn__menu btn__menu--close">
+            <i class="fas fa-times"></i>
+          </button>
+          <ul class="menu__links">
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="nav__link"
+                onclick="closeMenu()"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="nav__link"
+                onclick="closeMenu()"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="nav__link"
+                onclick="closeMenu()"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="nav__link"
+                onclick="closeMenu()"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="nav__link"
+                onclick="closeMenu()"
+                >Login</a
+              >
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="nav__link nav__link--primary"
+                onclick="closeMenu()"
+                >Sign Up</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="container">
@@ -68,5 +129,13 @@
       </div>
     </div>
   </body>
-  <script src="index.js"></script>
+  <script src="index.js">
+
+
+    function openMenu() {
+      console.log("HI")
+      const backdrop = document.querySelector(".menu__backdrop");
+      backdrop.classList += " menu__open";
+    }
+  </script>
 </html>
