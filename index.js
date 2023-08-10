@@ -77,7 +77,9 @@ function userHTML(movie) {
   return `<div class="user-card" onclick = "showUsersPosts(${movie.id})">
   <div class="user-card__container">
   <h3 class = "fixed-text">${movie.Title}</h3>
-   <img src = "${movie.Poster}" class = "movie__image">
+  <div class="movie__image--wrapper">
+  <img src = "${movie.Poster}" class = "movie__image">
+  </div>
     <p><b>Year:</b> ${movie.Year}</p>
   </div>
 </div>`;

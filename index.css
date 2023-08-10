@@ -166,8 +166,11 @@ ul {
   height: 120px; /* Set the desired height of the cropped image */
   object-fit: cover; /* Crop the image to cover the container */
 }
+.movie__image--wrapper {
+  height: 200px;
+}
 .movie__image {
-  /* height: 300px; */
+  /* height: 200px; */
   width: 100%;
   overflow: hidden;
 }
