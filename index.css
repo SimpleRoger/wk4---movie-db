@@ -24,7 +24,11 @@ p {
 
 li {
   color: white;
+  text-decoration: none;
+}
 
+a {
+  text-decoration: none;
 }
 
 .hidden {
@@ -176,6 +180,7 @@ ul {
 }
 
 .form-control {
+  min-width: 200px;
   padding: 20px;
   width: 30%;
   margin: 20px;
@@ -268,20 +273,18 @@ SPINNER
   }
 }
 
-
-@media  (max-width: 800px) {
+@media (max-width: 800px) {
   h1 {
     font-size: 30px;
   }
   li {
     font-weight: 700;
   }
- }
+}
 
- /* small phones */
+/* small phones */
 
- @media (max-width: 480px) {
-
+@media (max-width: 480px) {
   .nav__links {
     display: none;
   }
@@ -304,9 +307,30 @@ SPINNER
     margin-right: 10px;
   }
 
-
+  .btn__menu--close {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+  }
   .menu__open {
     display: block;
+    margin-left: 5%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    /* margin: 0 auto/; */
+    flex-direction: column;
+    background-color: white;
+    width: 90%;
+    justify-content: center;
+    height: 50%;
   }
- }
 
+  .menu__open ul {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+  }
+}
