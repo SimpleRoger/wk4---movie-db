@@ -78,7 +78,7 @@ function userHTML(movie) {
   <div class="user-card__container">
   <h3 class = "fixed-text">${movie.Title}</h3>
   <div class="movie__image--wrapper">
-  <img src = "${movie.Poster}" class = "movie__image">
+  <img src = "${movie.Poster}" alt = "movie poster image" class = "movie__image">
   </div>
     <p><b>Year:</b> ${movie.Year}</p>
   </div>
