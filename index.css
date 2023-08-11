@@ -229,7 +229,7 @@ ul {
 }
 
 .user-card {
-  width: calc(100% / 5);
+  width: 20%;
   margin: 20px;
 }
 
@@ -295,6 +295,8 @@ SPINNER
 /* small phones */
 
 @media (max-width: 480px) {
+
+
   .nav__links {
     display: none;
   }
@@ -334,6 +336,13 @@ SPINNER
     width: 90%;
     justify-content: center;
     height: 50%;
+  }
+  .search__results  {
+    text-align: center;
+  }
+
+  .user-card {
+    width: 200px;
   }
 
   .menu__open ul {
